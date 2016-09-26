@@ -6,17 +6,40 @@
     </head>
     <body>
         <div id="table">
-            <img id="logo" src="images/logo.png">
+            <img id="logo" src="./images/logo.png">
+        </div>
+        <div id="user-actions">
+            <form>
+                <button id= "fold"type="bet" value="Fold">Fold</button>
+                <button id= "check" type="bet" value="Check">Check</button>
+                <button id= "bet" type="bet" value="Bet">Bet</button>
+                <button id= "call" type="bet" value="Raise">Call</button>
+                <button id= "raise" type="bet" value="Raise">Raise</button>
+            </form>
         </div>
         <div id="players">
-            <div id="playerOne"></div>
-            <div id="playerTwo"></div>
-            <div id="playerThree"></div>
-            <div id="playerFour"></div>
-            <div id="playerFive"></div>
-            <div id="dealer">
-                <img id="dealer-img" src="images/dealer.png">
-            </div>
+
+
+                <div id="playerOne">
+                    <div class="playerCards" id="p1c1">1</div>
+                    <div class="playerCards" id="p1c2">2</div>
+                </div>
+
+                <div id="playerTwo">
+                    <div>Player Two Area</div>
+                </div>
+                <div id="playerThree">
+                    <div>Player Three Area</div>
+                </div>
+                <div id="playerFour">
+                    <div>Player Four Area</div>
+                </div>
+                <div id="playerFive">
+                    <div>Player Five Area</div>
+                </div>
+                <div id="dealer">
+                    <img id="dealer-img" src="./images/dealer.png">
+                </div>
         </div>
     </body>
 </html>

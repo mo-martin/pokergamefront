@@ -1,9 +1,9 @@
-body{
+body {
     background-color: #18191A;
 }
 
-#table{
-    background-color: #018F1D;
+#table {
+    background-image: -webkit-linear-gradient(bottom, #018F1D 0%, #5A9E00 100%);
     height: 400px;
     width: 800px;
     margin-top: 10%;
@@ -13,21 +13,70 @@ body{
     z-index: 10;
 }
 
+#user-actions {
+  background-image: -webkit-linear-gradient(bottom, #018F1D 0%, #5A9E00 100%);
+  height: 150px;
+  width: 650px;
+  margin-top: 4%;
+  margin-left: 35%;
+  border-radius: 75px;
+  border: 10px solid #A3A393;
+  position: absolute;
+}
 
-#dealer-img{
-    margin-left:50%;
-    margin-top: -25%;
-    border: 5px solid rgba(255, 0, 0, .5);
-    border-radius: 70px;
-    height: 100px;
-    width: 100px;
+form{
+  margin-left: 11%;
+  margin-top: 8%;
+}
+
+button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 3px solid rgba(0, 0, 0, .5);
+  border-radius: 6px;
+}
+
+#dealer-img {
+    margin-left: 47%;
+    margin-top: -29%;
+    border: 5px solid rgba(255, 0, 0, .2);
+    border-radius: 110px;
+    height: 200px;
+    width: 200px;
     position: absolute;
 }
 
-#playerOne{
-    margin-left:70%;
+.playerCards {
+  border: 1px solid white;
+  display: inline-block;
+  margin-top: 25%;
+  margin-left: 4px;
+  height: 45px;
+  width: 40px;
+  z-index: 15;
+}
+
+#playerOne {
+    margin-left: 70%;
     margin-top: -23%;
-    background-color: #D90329;
+    /* IE10+ */
+    background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* W3C Markup */
+    background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
     border: 5px solid white;
     border-radius: 70px;
     height: 100px;
@@ -35,10 +84,21 @@ body{
     position: absolute;
 }
 
-#playerTwo{
-    margin-left:50%;
+#playerTwo {
+    margin-left: 50%;
     margin-top: -3%;
-    background-color: #D90329;
+    /* IE10+ */
+    background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* W3C Markup */
+    background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
     border: 5px solid white;
     border-radius: 70px;
     height: 100px;
@@ -46,10 +106,21 @@ body{
     position: absolute;
 }
 
-#playerThree{
+#playerThree {
     margin-left: 29.5%;
     margin-top: -23%;
-    background-color: #D90329;
+    /* IE10+ */
+    background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* W3C Markup */
+    background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
     border: 5px solid white;
     border-radius: 70px;
     height: 100px;
@@ -57,10 +128,21 @@ body{
     position: absolute;
 }
 
-#playerFour{
-    margin-left:29.5%;
+#playerFour {
+    margin-left: 29.5%;
     margin-top: -5%;
-    background-color: #D90329;
+    /* IE10+ */
+    background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* W3C Markup */
+    background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
     border: 5px solid white;
     border-radius: 70px;
     height: 100px;
@@ -68,10 +150,21 @@ body{
     position: absolute;
 }
 
-#playerFive{
-    margin-left:70%;
+#playerFive {
+    margin-left: 70%;
     margin-top: -5%;
-    background-color: #D90329;
+    /* IE10+ */
+    background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+    /* W3C Markup */
+    background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
     border: 5px solid white;
     border-radius: 70px;
     height: 100px;
@@ -79,7 +172,7 @@ body{
     position: absolute;
 }
 
-#logo{
+#logo {
     height: 200px;
     width: 200px;
     margin-left: 38%;
@@ -87,8 +180,7 @@ body{
     opacity: 0.1;
 }
 
-
-#players{
+#players {
     width: 100%;
-      height: 100%;
+    height: 100%;
 }
