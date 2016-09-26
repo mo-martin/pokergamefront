@@ -55,7 +55,7 @@ button{
 .playerCards {
   border: 1px solid white;
   display: inline-block;
-  margin-top: 25%;
+  margin-top: 52%;
   margin-left: 4px;
   height: 45px;
   width: 40px;
@@ -124,7 +124,7 @@ button{
   background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
   background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
   border: 5px solid white;
-  height: 100px;
+  height: 110px;
   width: 100px;
   position: absolute;
 }
