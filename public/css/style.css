@@ -1,0 +1,60 @@
+.container{
+  height:1000px;
+  width:100%;
+  background-color: red;
+
+}
+
+.table{
+  height:500px;
+  width:700px;
+  background-color: green;
+
+}
+
+#p1 {
+height:50px;
+  width:50px;
+  border: 1px solid orange;
+}
+
+#dealer {
+height:50px;
+  width:50px;
+  border: 1px solid orange;
+}
+
+
+#p2 {
+height:50px;
+  width:50px;
+  border: 1px solid orange;
+}
+
+
+#p3 {
+height:50px;
+  width:50px;
+  border: 1px solid orange;
+}
+
+
+#river {
+height:50px;
+  width:50px;
+  border: 1px solid orange;
+}
+
+
+#player {
+height:50px;
+  width:50px;
+  border: 1px solid orange;
+}
+
+
+#p4 {
+height:50px;
+  width:50px;
+  border: 1px solid orange;
+}
