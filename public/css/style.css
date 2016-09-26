@@ -65,17 +65,11 @@ button{
 #playerOne {
     margin-left: 70%;
     margin-top: -23%;
-    /* IE10+ */
     background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Mozilla Firefox */
     background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Opera */
     background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Webkit (Safari/Chrome 10) */
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
-    /* Webkit (Chrome 11+) */
     background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* W3C Markup */
     background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
     border: 5px solid white;
     border-radius: 70px;
@@ -87,17 +81,11 @@ button{
 #playerTwo {
     margin-left: 50%;
     margin-top: -3%;
-    /* IE10+ */
     background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Mozilla Firefox */
     background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Opera */
     background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Webkit (Safari/Chrome 10) */
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
-    /* Webkit (Chrome 11+) */
     background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* W3C Markup */
     background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
     border: 5px solid white;
     border-radius: 70px;
@@ -109,17 +97,11 @@ button{
 #playerThree {
     margin-left: 29.5%;
     margin-top: -23%;
-    /* IE10+ */
     background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Mozilla Firefox */
     background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Opera */
     background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Webkit (Safari/Chrome 10) */
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
-    /* Webkit (Chrome 11+) */
     background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* W3C Markup */
     background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
     border: 5px solid white;
     border-radius: 70px;
@@ -131,17 +113,11 @@ button{
 #playerFour {
     margin-left: 29.5%;
     margin-top: -5%;
-    /* IE10+ */
     background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Mozilla Firefox */
     background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Opera */
     background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* Webkit (Safari/Chrome 10) */
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
-    /* Webkit (Chrome 11+) */
     background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-    /* W3C Markup */
     background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
     border: 5px solid white;
     border-radius: 70px;
@@ -184,3 +160,42 @@ button{
     width: 100%;
     height: 100%;
 }
+
+.playerTray {
+  background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+  background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+  background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
+  background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+  background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
+  border: 5px solid white;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+}
+
+#p1Tray {
+  margin-left: 70%;
+  margin-top: -20%;
+}
+
+#p2Tray {
+  margin-left: 50%;
+  margin-top: 0%;
+}
+
+#p3Tray {
+  margin-left: 29.5%;
+  margin-top: -21%;
+}
+
+#p4Tray {
+  margin-left: 29.5%;
+  margin-top: -3%;
+}
+
+#p5Tray {
+  margin-left: 70%;
+  margin-top: -3%;
+}
+
