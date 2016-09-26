@@ -1,60 +1,112 @@
 .container{
-  height:1000px;
+  height:100%;
   width:100%;
-  background-color: red;
+  background-color:black ;
 
 }
 
 .table{
-  height:500px;
-  width:700px;
-  background-color: green;
-
+  background-color: #1B3A1D;
+  height: 650px;
+  width: 1200px;
+  margin-top: 5%;
+  margin-left: 25%;
+  border-radius: 75px;
+  border: 10px solid white;
+  padding: 10px;
+  padding-left:10px;
 }
 
-#p1 {
-height:50px;
-  width:50px;
-  border: 1px solid orange;
+#playerone {
+  height:150px;
+  width:350px;
+  border: 10px solid white;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: red;
+  margin-right: 35px;
 }
 
 #dealer {
-height:50px;
-  width:50px;
-  border: 1px solid orange;
+  height:150px;
+  width:350px;
+  border: 10px solid white;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: blue;
+  margin-right: 35px;
 }
 
-
-#p2 {
-height:50px;
-  width:50px;
-  border: 1px solid orange;
+#playertwo {
+  height:150px;
+  width:350px;
+  border: 10px solid white;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: red;
 }
 
-
-#p3 {
-height:50px;
-  width:50px;
-  border: 1px solid orange;
+.empty {
+  height:150px;
+  width:300px;
+  border: 10px solid #1B3A1D;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 10px
 }
 
+#emptyleft {
+/*  height:150px;
+  width:350px;
+  border: 10px solid #1B3A1D;
+  border-radius: 50px;
+  display: inline-block;*/
+}
 
 #river {
-height:50px;
-  width:50px;
-  border: 1px solid orange;
+  height:150px;
+  width:450px;
+  border: 10px solid white;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 10px
+}
+
+#emptyright {
+/*  height:150px;
+  width:350px;
+  border: 10px solid #1B3A1D;
+  border-radius: 50px;
+  display: inline-block;*/
+}
+
+#playerthree {
+  height:150px;
+  width:350px;
+  border: 10px solid white;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: red;
+  margin-right: 35px;
+}
+
+#user {
+  height:150px;
+  width:350px;
+  border: 10px solid white;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: green;
+  margin-right: 35px;
+}
+
+#playerfour {
+  height:150px;
+  width:350px;
+  border: 10px solid white;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: red;
 }
 
 
-#player {
-height:50px;
-  width:50px;
-  border: 1px solid orange;
-}
-
-
-#p4 {
-height:50px;
-  width:50px;
-  border: 1px solid orange;
-}
