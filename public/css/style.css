@@ -79,6 +79,7 @@ button{
 }
 
 #playerOne {
+  margin: auto;
   margin-left: 70%;
   margin-top: -23%;
 }
@@ -117,16 +118,20 @@ button{
 }
 
 .playerTray {
-  background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
+  /*background-image: -ms-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
   background-image: -moz-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
   background-image: -o-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #8F0303), color-stop(100, #C90000));
   background-image: -webkit-linear-gradient(bottom, #8F0303 0%, #C90000 100%);
-  background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);
-  border: 5px solid white;
+  background-image: linear-gradient(to top, #8F0303 0%, #C90000 100%);*/
+  background-color: black;
+  border-left:  5px solid white;
+  border-right: 5px solid white;
+  border-bottom: 5px solid white;
   height: 110px;
   width: 100px;
   position: absolute;
+  border-radius: 10px;
 }
 
 #p1Tray {
