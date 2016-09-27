@@ -67,10 +67,14 @@ button{
   width: 200px;
   position: absolute;
 }
-#card{
-  height: 45px;
-  width: 40px;
+img{
+    height: 45px;
+    width: 40px;
+}
 
+img:hover{
+  height: 150px;
+  width:150px;
 }
 
 .playerCards {
@@ -149,12 +153,21 @@ button{
   width: 100px;
   position: absolute;
   border-radius: 10px;
+
 }
 
 #p1Tray {
   margin-left: 70%;
   margin-top: -19.7%;
 }
+
+ /*#card:hover {
+ height: 200px;
+ width:200px;
+}*/
+
+
+
 
 #p2Tray {
   margin-left: 50%;
@@ -177,8 +190,8 @@ button{
 }
 
 
-#card:hover{
+/*#card:hover{
   height: 200px;
   width:200px;
-}
+}*/
 
