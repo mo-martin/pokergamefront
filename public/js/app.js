@@ -12,10 +12,15 @@ $(document).ready(function () {
     }
 
     $document.on('input', 'input[type="range"], ' + selector, function(e) {
-            valueOutput(e.target);
-        });
+        valueOutput(e.target);
+    });
 
+    var currentX = cards.positions.S7.X;
+    var currentY = cards.positions.S7.Y;
+    console.log(`X:${currentX} -  Y:${currentY}`)
 
+    //$('#p1c1').css('background', 'url("./public/images/cards.png")' + '240px -340px');
+    $('#p1c1').css('background', `url("./public/images/cards.png") ${currentX}px ${currentY}px`);
 
 // //chips validation on raise
 // function playerBet(){
