@@ -3,6 +3,38 @@ $(document).ready(function () {
     var selector = '[data-rangeslider]';
     var $element = $(selector);
     var textContent = ('textContent' in document) ? 'textContent' : 'innerText';
+    var gameID;
+
+    $.ajax('http://localhost:3000/Deck/new', {
+            beforeSend: function(xhr) {
+                return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+            }
+        }).done(function(data) {
+            console.log(JSON.stringify(data.id));
+            gameID = data.id;
+            //console.log( JSON.stringify(data.players[0].hand[0]));
+    });
+
+
+var gameidtest = '57ebe05bb7819a19aa9cc858';
+
+        $.ajax('http://localhost:3000/Deck/' + gameidtest + '/shuffle', {
+            beforeSend: function(xhr) {
+                return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+            }
+        }).done(function(data) {
+            console.log('shuffled game id: ' + gameidtest)
+    });
+
+$.ajax('http://localhost:3000/Deck/' + gameidtest + '/deal', {
+            beforeSend: function(xhr) {
+                return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+            }
+        }).done(function(data) {
+            console.log(JSON.stringify(data.players[0].hand[0].Suit + data.players[0].hand[0].Value + data.players[0].hand[1].Suit + data.players[0].hand[1].Value));
+    });
+
+
 
     function valueOutput(element) {
         var value = element.value;
