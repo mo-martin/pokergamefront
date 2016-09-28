@@ -2,6 +2,10 @@
 
 var cards = {
     "positions": {
+        "back":{
+            "X": 0,
+            "Y": 0
+        },
         "S1": {
             "X":0 ,
             "Y": -170

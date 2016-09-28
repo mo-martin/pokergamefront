@@ -15,8 +15,8 @@ $(document).ready(function () {
         valueOutput(e.target);
     });
 
-    var currentX = cards.positions.C4.X;
-    var currentY = cards.positions.C4.Y;
+    var currentX = cards.positions.back.X;
+    var currentY = cards.positions.back.Y;
     console.log(`X:${currentX} -  Y:${currentY}`)
 
     //$('#p1c1').css('background', 'url("./public/images/cards.png")' + '240px -340px');
