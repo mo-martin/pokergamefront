@@ -1,5 +1,5 @@
 // Spades
-
+//ci test
 var cards = {
     "positions": {
         "back":{
