@@ -8,6 +8,7 @@
 
 
 
+
         $("#newGame").click(function() {
             $.ajax('http://localhost:3000/Deck/new', { //creates new game
                 beforeSend: function(xhr) {
@@ -95,8 +96,8 @@
                 function setCards(card, num1) {
                     $.getJSON('https://raw.githubusercontent.com/alanbonhamsky/pokergamefront/master/public/js/coords.json', function(data) {
                         console.log(card);
-                        var currentX = data.positions[card].X;
-                        var currentY = data.positions[card].Y;
+                        var currentX = data.positions[card].X/3;
+                        var currentY = data.positions[card].Y/3;
                         $('#c' + num1).css('background', `url("./public/images/cards.png") ${currentX}px ${currentY}px`);
                     });
                 }
