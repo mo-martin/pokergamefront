@@ -158,6 +158,53 @@ img:hover{
 
 }
 
+#boardPile{
+  width: 600px;
+  height: 200px;
+  margin-left: 42%;
+  margin-top: -17%;
+  position: absolute;
+}
+
+#c1{
+  background-color: white;
+  border: 1px solid black;
+  width: 66px;
+  height: 80px;
+  display: inline-block;
+  margin-left: 4%;
+}
+
+#c2{
+  background-color: white;
+  border: 1px solid black;
+  width: 66px;
+  height: 80px;
+  display: inline-block;
+}
+#c3{
+  background-color: white;
+  border: 1px solid black;
+  width: 66px;
+  height: 80px;
+  display: inline-block;
+}
+#c4{
+  background-color: white;
+  border: 1px solid black;
+  width: 66px;
+  height: 80px;
+  margin-left: 1%;
+  display: inline-block;
+}
+#c5{
+  background-color: white;
+  border: 1px solid black;
+  width: 66px;
+  height: 80px;
+  margin-left: 1%;
+  display: inline-block;
+}
 #p1Tray {
   margin-left: 70%;
   margin-top: -19.7%;
