@@ -1,0 +1,21 @@
+{
+  "name": "apiproject",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Matthew Dewhirst <matthew.dewhirst@skybettingandgaming.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/alanbonhamsky/pokergamefront",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "rangeslider": "^2.1.0",
+    "jquery": "^3.1.1"
+  }
+}

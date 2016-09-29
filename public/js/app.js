@@ -10,7 +10,7 @@
 
 
         $("#newGame").click(function() {
-            $.ajax('http://localhost:3000/Deck/new', { //creates new game
+            $.ajax( API_URL + '/Deck/new', { //creates new game
                 beforeSend: function(xhr) {
                     return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
                 }
