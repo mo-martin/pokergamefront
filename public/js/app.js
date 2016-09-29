@@ -20,13 +20,13 @@
                 console.log("New Game Initiated with ID: " + gameID);
                 //localStorage.setItem("gameID", data.id);
                 //console.log(JSON.stringify(data.players[0].hand[0]));
-                $.ajax('http://localhost:3000/Deck/' + gameID + '/shuffle', {
+                $.ajax(API_URL + '/Deck/' + gameID + '/shuffle', {
                     beforeSend: function(xhr) {
                         return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
                     }
                 }).done(function(data) {
                     console.log('Shuffled Game ID: ' + gameID);
-                    $.ajax('http://localhost:3000/Deck/' + gameID + '/deal', {
+                    $.ajax(API_URL + '/Deck/' + gameID + '/deal', {
                         beforeSend: function(xhr) {
                             return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
                         }
@@ -72,7 +72,7 @@
                     console.log(card);
                     var currentX = data.positions[card].X;
                     var currentY = data.positions[card].Y;
-                    $('#p' + num1 + 'c' + num2).css('background', `url("./public/images/cards.png") ${currentX}px ${currentY}px`);
+                    $('#p' + num1 + 'c' + num2).css('background', `url("/images/cards.png") ${currentX}px ${currentY}px`);
                 });
             }
 
@@ -80,7 +80,7 @@
 
         $("#nextRound").click(function() {
             //this will advance the rounds
-            $.ajax('http://localhost:3000/Deck/' + gameID + '/deal', {
+            $.ajax(API_URL + '/Deck/' + gameID + '/deal', {
                 beforeSend: function(xhr) {
                     return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
                 }
@@ -98,7 +98,7 @@
                         console.log(card);
                         var currentX = data.positions[card].X/3;
                         var currentY = data.positions[card].Y/3;
-                        $('#c' + num1).css('background', `url("./public/images/cards.png") ${currentX}px ${currentY}px`);
+                        $('#c' + num1).css('background', `url("/images/cards.png") ${currentX}px ${currentY}px`);
                     });
                 }
             });
@@ -109,7 +109,7 @@
 
 
         //access game state
-        // $.ajax('http://localhost:3000/Deck/' + gameID + '/cards', {
+        // $.ajax(API_URL + '/Deck/' + gameID + '/cards', {
         //     beforeSend: function(xhr) {
         //         return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         //     }
