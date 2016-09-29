@@ -1,11 +1,14 @@
+    var gameID;
+    var card;
 $(document).ready(function() {
     var $document = $(document);
     var selector = '[data-rangeslider]';
     var $element = $(selector);
     var textContent = ('textContent' in document) ? 'textContent' : 'innerText';
-    var gameID;
-    var card;
 
+
+
+$("#newGame").click(function(){
     $.ajax('http://localhost:3000/Deck/new', { //creates new game
         beforeSend: function(xhr) {
             return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
@@ -72,7 +75,7 @@ $(document).ready(function() {
         });
     }
 
-
+});
 
     // //this will advance the rounds
     //     $.ajax('http://localhost:3000/Deck/' + gameID + '/deal', {
@@ -111,3 +114,4 @@ $(document).ready(function() {
 
 
 });
+
