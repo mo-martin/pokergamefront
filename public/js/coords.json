@@ -1,6 +1,4 @@
-// Spades
-//ci test
-var cards = {
+{
     "positions": {
         "back":{
             "X": 0,
@@ -215,4 +213,4 @@ var cards = {
             "Y": -680
         }
     }
-};
+}
