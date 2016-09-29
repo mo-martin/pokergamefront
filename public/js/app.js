@@ -33,22 +33,42 @@ $(document).ready(function() {
                 $("#playerThree").html(data.players[2].chips);
                 $("#playerFour").html(data.players[3].chips);
                 $("#playerFive").html(data.players[4].chips);
-                //console.log(data.players[0].hand[0].Suit + data.players[0].hand[0].Value);
                 card = data.players[0].hand[0].Suit + data.players[0].hand[0].Value;
-                setCards(card);
-                //$("p1c1").html();
+                setCards(card, 1, 1);
+                card = data.players[0].hand[1].Suit + data.players[0].hand[1].Value;
+                setCards(card, 1, 2);
+
+                card = data.players[1].hand[0].Suit + data.players[1].hand[0].Value;
+                setCards(card, 2, 1);
+                card = data.players[1].hand[1].Suit + data.players[1].hand[1].Value;
+                setCards(card, 2, 2);
+
+                card = data.players[2].hand[0].Suit + data.players[2].hand[0].Value;
+                setCards(card, 3, 1);
+                card = data.players[2].hand[1].Suit + data.players[2].hand[1].Value;
+                setCards(card, 3, 2);
+
+                card = data.players[3].hand[0].Suit + data.players[3].hand[0].Value;
+                setCards(card, 4, 1);
+                card = data.players[3].hand[1].Suit + data.players[3].hand[1].Value;
+                setCards(card, 4, 2);
+
+                card = data.players[4].hand[0].Suit + data.players[4].hand[0].Value;
+                setCards(card, 5, 1);
+                card = data.players[4].hand[1].Suit + data.players[4].hand[1].Value;
+                setCards(card, 5, 2);
 
             });
         });
     });
 
 
-    function setCards(card) {
+    function setCards(card, num1, num2) {
         $.getJSON('https://raw.githubusercontent.com/alanbonhamsky/pokergamefront/master/public/js/coords.json', function(data) {
             console.log(card);
             var currentX = data.positions[card].X;
             var currentY = data.positions[card].Y;
-            $('#p1c1').css('background', `url("./public/images/cards.png") ${currentX}px ${currentY}px`);
+            $('#p'+ num1 +'c' + num2).css('background', `url("./public/images/cards.png") ${currentX}px ${currentY}px`);
         });
     }
 
