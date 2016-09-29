@@ -1,38 +1,49 @@
-$(document).ready(function () {
+$(document).ready(function() {
     var $document = $(document);
     var selector = '[data-rangeslider]';
     var $element = $(selector);
     var textContent = ('textContent' in document) ? 'textContent' : 'innerText';
     var gameID;
 
-    $.ajax('http://localhost:3000/Deck/new', {
+    $.ajax('http://localhost:3000/Deck/new', { //creates new game
+        beforeSend: function(xhr) {
+            return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+        }
+    }).done(function(data) { //data.id goves game id from json
+        //console.log("Game Initiated: " + JSON.stringify(data.id));
+        gameID = data.id;
+        console.log("New Game Initiated: " + data.id);
+        //localStorage.setItem("gameID", data.id);
+        //console.log(JSON.stringify(data.players[0].hand[0]));
+        $.ajax('http://localhost:3000/Deck/' + gameID + '/shuffle', {
             beforeSend: function(xhr) {
                 return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
             }
         }).done(function(data) {
-            console.log(JSON.stringify(data.id));
-            gameID = data.id;
-            //console.log( JSON.stringify(data.players[0].hand[0]));
+            console.log('shuffled game id: ' + gameID);
+            $.ajax('http://localhost:3000/Deck/' + gameID + '/deal', {
+                beforeSend: function(xhr) {
+                    return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+                }
+            }).done(function(data) {
+                console.log('Dealt game id: ' + gameID);
+            });
+        });
     });
 
 
-var gameidtest = '57ebe05bb7819a19aa9cc858';
 
-        $.ajax('http://localhost:3000/Deck/' + gameidtest + '/shuffle', {
-            beforeSend: function(xhr) {
-                return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-            }
-        }).done(function(data) {
-            console.log('shuffled game id: ' + gameidtest)
-    });
 
-$.ajax('http://localhost:3000/Deck/' + gameidtest + '/deal', {
-            beforeSend: function(xhr) {
-                return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-            }
-        }).done(function(data) {
-            console.log(JSON.stringify(data.players[0].hand[0].Suit + data.players[0].hand[0].Value + data.players[0].hand[1].Suit + data.players[0].hand[1].Value));
-    });
+
+
+    // $.ajax('http://localhost:3000/Deck/' + localStorage.getItem("gameID") + '/cards', {
+    //     beforeSend: function(xhr) {
+    //         return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    //     }
+    // }).done(function(data) {
+
+    //     console.log(JSON.stringify(data.players[0].hand[0].Suit + data.players[0].hand[0].Value + data.players[0].hand[1].Suit + data.players[0].hand[1].Value));
+    // });
 
 
 
@@ -54,10 +65,9 @@ $.ajax('http://localhost:3000/Deck/' + gameidtest + '/deal', {
     //$('#p1c1').css('background', 'url("./public/images/cards.png")' + '240px -340px');
     $('#p1c1').css('background', `url("./public/images/cards.png") ${currentX}px ${currentY}px`);
 
-// //chips validation on raise
-// function playerBet(){
+    // //chips validation on raise
+    // function playerBet(){
 
-// };
+    // };
 
 });
-
