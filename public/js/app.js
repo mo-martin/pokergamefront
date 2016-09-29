@@ -4,6 +4,7 @@ $(document).ready(function() {
     var $element = $(selector);
     var textContent = ('textContent' in document) ? 'textContent' : 'innerText';
     var gameID;
+    var card;
 
     $.ajax('http://localhost:3000/Deck/new', { //creates new game
         beforeSend: function(xhr) {
@@ -32,7 +33,9 @@ $(document).ready(function() {
                 $("#playerThree").html(data.players[2].chips);
                 $("#playerFour").html(data.players[3].chips);
                 $("#playerFive").html(data.players[4].chips);
-                console.log(data.players[0].hand[0].Suit + data.players[0].hand[0].Value);
+                //console.log(data.players[0].hand[0].Suit + data.players[0].hand[0].Value);
+                card = data.players[0].hand[0].Suit + data.players[0].hand[0].Value;
+                setCards(card);
                 //$("p1c1").html();
 
             });
@@ -40,24 +43,29 @@ $(document).ready(function() {
     });
 
 
-
-        $.getJSON('./public/js/coords.json', function(data) {
-            console.log(data.positions.S1);
+    function setCards(card) {
+        $.getJSON('https://raw.githubusercontent.com/alanbonhamsky/pokergamefront/master/public/js/coords.json', function(data) {
+            console.log(card);
+            var currentX = data.positions[card].X;
+            var currentY = data.positions[card].Y;
+            $('#p1c1').css('background', `url("./public/images/cards.png") ${currentX}px ${currentY}px`);
         });
-
-
-// //this will advance the rounds
-//     $.ajax('http://localhost:3000/Deck/' + gameID + '/deal', {
-//         beforeSend: function(xhr) {
-//             return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-//         }
-//     }).done(function(data) {
-//         console.log('Dealt game id: ' + gameID);
-//     });
+    }
 
 
 
-//access game state
+    // //this will advance the rounds
+    //     $.ajax('http://localhost:3000/Deck/' + gameID + '/deal', {
+    //         beforeSend: function(xhr) {
+    //             return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    //         }
+    //     }).done(function(data) {
+    //         console.log('Dealt game id: ' + gameID);
+    //     });
+
+
+
+    //access game state
     // $.ajax('http://localhost:3000/Deck/' + gameID + '/cards', {
     //     beforeSend: function(xhr) {
     //         return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
@@ -68,7 +76,7 @@ $(document).ready(function() {
     // });
 
 
-
+    //Slider///////////////////////////////////////////////////////////////////////
     function valueOutput(element) {
         var value = element.value;
         var output = element.parentNode.getElementsByTagName('output')[0] || element.parentNode.parentNode.getElementsByTagName('output')[0];
@@ -79,17 +87,7 @@ $(document).ready(function() {
     $document.on('input', 'input[type="range"], ' + selector, function(e) {
         valueOutput(e.target);
     });
+    ///////////////////////////////////////////////////////////////////////////////
 
-    var currentX = cards.positions.back.X;
-    var currentY = cards.positions.back.Y;
-    //console.log(`X:${currentX} -  Y:${currentY}`)
-
-    //$('#p1c1').css('background', 'url("./public/images/cards.png")' + '240px -340px');
-    $('#p1c1').css('background', `url("./public/images/cards.png") ${currentX}px ${currentY}px`);
-
-    // //chips validation on raise
-    // function playerBet(){
-
-    // };
 
 });
