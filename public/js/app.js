@@ -12,7 +12,7 @@ $(document).ready(function() {
     }).done(function(data) { //data.id goves game id from json
         //console.log("Game Initiated: " + JSON.stringify(data.id));
         gameID = data.id;
-        console.log("New Game Initiated: " + data.id);
+        console.log("New Game Initiated: " + gameID);
         //localStorage.setItem("gameID", data.id);
         //console.log(JSON.stringify(data.players[0].hand[0]));
         $.ajax('http://localhost:3000/Deck/' + gameID + '/shuffle', {
@@ -27,16 +27,32 @@ $(document).ready(function() {
                 }
             }).done(function(data) {
                 console.log('Dealt game id: ' + gameID);
+                $("#playerOne").html(data.players[0].chips);
+                $("#playerTwo").html(data.players[1].chips);
+                $("#playerThree").html(data.players[2].chips);
+                $("#playerFour").html(data.players[3].chips);
+                $("#playerFive").html(data.players[4].chips);
+                console.log(data.players[0].hand[0].Suit + data.players[0].hand[0].Value);
+                //$("p1c1").html();
+
             });
         });
     });
 
 
+// //this will advance the rounds
+//     $.ajax('http://localhost:3000/Deck/' + gameID + '/deal', {
+//         beforeSend: function(xhr) {
+//             return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+//         }
+//     }).done(function(data) {
+//         console.log('Dealt game id: ' + gameID);
+//     });
 
 
 
-
-    // $.ajax('http://localhost:3000/Deck/' + localStorage.getItem("gameID") + '/cards', {
+//access game state
+    // $.ajax('http://localhost:3000/Deck/' + gameID + '/cards', {
     //     beforeSend: function(xhr) {
     //         return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     //     }
