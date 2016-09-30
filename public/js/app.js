@@ -1,5 +1,7 @@
     var gameID;
     var card;
+    var playerBet = 0;
+    var players = [];
     $(document).ready(function() {
         var $document = $(document);
         var selector = '[data-rangeslider]';
@@ -17,6 +19,7 @@
             }).done(function(data) { //data.id goves game id from json
                 //console.log("Game Initiated: " + JSON.stringify(data.id));
                 gameID = data.id;
+                players = data.players;
                 console.log("New Game Initiated with ID: " + gameID);
                 //localStorage.setItem("gameID", data.id);
                 //console.log(JSON.stringify(data.players[0].hand[0]));
@@ -78,33 +81,81 @@
 
         });
 
-        $("#nextRound").click(function() {
-            //this will advance the rounds
-            $.ajax(API_URL + '/Deck/' + gameID + '/deal', {
-                beforeSend: function(xhr) {
-                    return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-                }
-            }).done(function(data) {
-                console.log('Dealt Next Round - game id: ' + gameID);
+        // $("#nextRound").click(function() {
+        //     //this will advance the rounds
+        //     $.ajax(API_URL + '/Deck/' + gameID + '/deal', {
+        //         beforeSend: function(xhr) {
+        //             return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+        //         }
+        //     }).done(function(data) {
+        //         console.log('Dealt Next Round - game id: ' + gameID);
 
-                for (var i = 0; i < data.boardPile.length; i++) {
-                    card = data.boardPile[i].Suit + data.boardPile[i].Value;
-                    setCards(card, i+1);
-                }
+        //         for (var i = 0; i < data.boardPile.length; i++) {
+        //             card = data.boardPile[i].Suit + data.boardPile[i].Value;
+        //             setCards(card, i+1);
+        //         }
 
 
-                function setCards(card, num1) {
-                    $.getJSON('https://raw.githubusercontent.com/alanbonhamsky/pokergamefront/master/public/js/coords.json', function(data) {
-                        console.log(card);
-                        var currentX = data.positions[card].X/3;
-                        var currentY = data.positions[card].Y/3;
-                        $('#c' + num1).css('background', `url("/images/cards.png") ${currentX}px ${currentY}px`);
-                    });
-                }
-            });
+        //         function setCards(card, num1) {
+        //             $.getJSON('https://raw.githubusercontent.com/alanbonhamsky/pokergamefront/master/public/js/coords.json', function(data) {
+        //                 console.log(card);
+        //                 var currentX = data.positions[card].X/3;
+        //                 var currentY = data.positions[card].Y/3;
+        //                 $('#c' + num1).css('background', `url("/images/cards.png") ${currentX}px ${currentY}px`);
+        //             });
+        //         }
+        //     });
+        // });
+
+        // $("*").click(function(e) {
+        //     e.stopPropagation();
+        //     if ($(this).hasId('bet')) {
+                
+        //     } else if ($(this).hasId('fold')) {
+
+        //     } else if ($(this).hasId('call')) {
+
+        //     } else if ($(this).hasId('raise')) {
+
+        //     } else if ($(this).hasId('check')) {
+
+        //     }
+        // });
+        $('#bet').on('click', function(e) {
+            e.preventDefault();
+            playerBet = 100;
+            
+            for (var i = 0; i < players.length; i++) {
+                players[i].bet = playerBet;
+                $.ajax( API_URL + '/game/' + gameID + '/player/' + (i+1) + '/bet/' + playerBet, { //places a bet
+                    beforeSend: function(xhr) {
+                        return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+                    }
+                }).done(function(data) {
+
+                });
+            }
+            console.log(players);
+        });
+        $('#raise').on('click', function(e) {
+            e.preventDefault();
+            alert("You clicked raise!");
         });
 
+        $('#fold').on('click', function(e) {
+            e.preventDefault();
+            alert("You dclicked fold!");
+        });
 
+        $('#call').on('click', function(e) {
+            e.preventDefault();
+            alert("You clicked call!");
+        });
+
+        $('#check').on('click', function(e) {
+            e.preventDefault();
+            alert("You clicked check!");
+        });
 
 
 
