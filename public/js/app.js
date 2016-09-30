@@ -75,7 +75,7 @@
                     console.log(card);
                     var currentX = data.positions[card].X;
                     var currentY = data.positions[card].Y;
-                    $('#p' + num1 + 'c' + num2).css('background', `url("/images/cards.png") ${currentX}px ${currentY}px`);
+                    $('#p' + num1 + 'c' + num2).css('background', `url("/images/cardsbig.png") ${currentX}px ${currentY}px`);
                 });
             }
 
@@ -107,20 +107,7 @@
         //     });
         // });
 
-        // $("*").click(function(e) {
-        //     e.stopPropagation();
-        //     if ($(this).hasId('bet')) {
-                
-        //     } else if ($(this).hasId('fold')) {
-
-        //     } else if ($(this).hasId('call')) {
-
-        //     } else if ($(this).hasId('raise')) {
-
-        //     } else if ($(this).hasId('check')) {
-
-        //     }
-        // });
+       
         $('#bet').on('click', function(e) {
             e.preventDefault();
             playerBet = 100;
@@ -135,6 +122,29 @@
 
                 });
             }
+
+            $.ajax(API_URL + '/Deck/' + gameID + '/deal', {
+                beforeSend: function(xhr) {
+                    return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+                }
+            }).done(function(data) {
+                console.log('Dealt Next Round - game id: ' + gameID);
+
+                for (var i = 0; i < data.boardPile.length; i++) {
+                    card = data.boardPile[i].Suit + data.boardPile[i].Value;
+                    setCards(card, i+1);
+                }
+
+
+                function setCards(card, num1) {
+                    $.getJSON('https://raw.githubusercontent.com/alanbonhamsky/pokergamefront/master/public/js/coords.json', function(data) {
+                        console.log(card);
+                        var currentX = data.positions[card].X;
+                        var currentY = data.positions[card].Y;
+                        $('#c' + num1).css('background', `url("/images/cardsbig.png") ${currentX}px ${currentY}px`);
+                    });
+                }
+            });
             console.log(players);
         });
         $('#raise').on('click', function(e) {
