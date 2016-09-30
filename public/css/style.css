@@ -104,6 +104,7 @@ img:hover{
   width: 100px;
   position: absolute;
   text-align: center;
+  color:white;
 }
 
 #playerOne {
@@ -114,6 +115,23 @@ img:hover{
 }
 
 #playerTwo {
+  /* IE10+ */ 
+  background-image: -ms-linear-gradient(top, #36EB19 0%, #156907 100%);
+
+  /* Mozilla Firefox */ 
+  background-image: -moz-linear-gradient(top, #36EB19 0%, #156907 100%);
+
+  /* Opera */ 
+  background-image: -o-linear-gradient(top, #36EB19 0%, #156907 100%);
+
+  /* Webkit (Safari/Chrome 10) */ 
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #36EB19), color-stop(100, #156907));
+
+  /* Webkit (Chrome 11+) */ 
+  background-image: -webkit-linear-gradient(top, #36EB19 0%, #156907 100%);
+
+  /* W3C Markup */ 
+  background-image: linear-gradient(to bottom, #36EB19 0%, #156907 100%);
   margin-left: 50%;
   margin-top: -3%;
 }
@@ -155,6 +173,7 @@ img:hover{
   width: 100px;
   position: absolute;
   border-radius: 10px;
+
 
 }
 
