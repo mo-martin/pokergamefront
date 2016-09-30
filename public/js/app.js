@@ -12,6 +12,11 @@
 
 
         $("#newGame").click(function() {
+            $('#c1').css('background', `url("/images/cardsbig.png") ${0}px ${0}px`);
+            $('#c2').css('background', `url("/images/cardsbig.png") ${0}px ${0}px`);
+            $('#c3').css('background', `url("/images/cardsbig.png") ${0}px ${0}px`);
+            $('#c4').css('background', `url("/images/cardsbig.png") ${0}px ${0}px`);
+            $('#c5').css('background', `url("/images/cardsbig.png") ${0}px ${0}px`);
             $.ajax( API_URL + '/Deck/new', { //creates new game
                 beforeSend: function(xhr) {
                     return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
@@ -120,6 +125,17 @@
                     }
                 }).done(function(data) {
 
+                $.ajax(API_URL + '/Deck/' + gameID + '/cards', {
+                    beforeSend: function(xhr) {
+                            return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+                        }
+                        }).done(function(data) {
+                        $("#playerOne").html(data.players[0].chips);
+                        $("#playerTwo").html(data.players[1].chips);
+                        $("#playerThree").html(data.players[2].chips);
+                        $("#playerFour").html(data.players[3].chips);
+                        $("#playerFive").html(data.players[4].chips);
+                    });
                 });
             }
 
@@ -170,14 +186,7 @@
 
 
         //access game state
-        // $.ajax(API_URL + '/Deck/' + gameID + '/cards', {
-        //     beforeSend: function(xhr) {
-        //         return xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-        //     }
-        // }).done(function(data) {
 
-        //     console.log(JSON.stringify(data.players[0].hand[0].Suit + data.players[0].hand[0].Value + data.players[0].hand[1].Suit + data.players[0].hand[1].Value));
-        // });
 
 
         //Slider///////////////////////////////////////////////////////////////////////
