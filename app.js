@@ -9,10 +9,14 @@ app.use(express.static(__dirname + '/bower_components'));
 app.use(express.static('public'));
 app.use(express.static('bower_components'));
 
+var port = process.env.PORT || 3000;
+var apiUrl = process.env.API_URL || "http://localhost:3001/";
+
 app.use('/',function(req, res) {
-	res.render('index' , {api: process.env.API_URL || "http://localhost:3001/"});
+	res.render('index' , {api: apiUrl});
 });
 
-app.listen(process.env.PORT || 3000, function() {
-	console.log('server has started');
+app.listen(port, function() {
+	console.log('Express app Poker APP server has started on port ' + port);
+	console.log('Connecting to API_URL=' + apiUrl);
 });
