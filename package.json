@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "http": "",
     "blockjs": "0.0.9",
     "bower":"1.7.9",
     "ejs": "^2.5.2",
